@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diabetes Prediction - ML Project</title>
+    <style>
+        body{
+        background-color: #FFFF99;
+        }
+        input[type=text]{
+        text-align: center;
+        border: 0px;
+        width: 200px;
+        height: 30px;
+        }
+        input[type=submit]{
+        border: 0px;
+        width: 150px;
+        height: 30px;
+        background-color: #ffff00;
+        }
+        div.form{
+        background-color: #bfbfbf;
+        text-align: center;
+        box-shadow: 2px 2px 30px #1a1a1a;
+        width: 45vw;
+        }
+        form{
+        border-left-style: solid;
+        border-color: #ffff00;
+        border-left-width: 5px;
+        padding: 15px;
+        }
+        input[type=submit]:hover{
+        box-shadow: 2px 4px 20px #666666;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div class="form">
+            <h1>Diabetes Prediction</h1>
+            <form action="{{ url_for('predict') }}" method="post">
+                <input type="text" name="Pregnancies" placeholder="Pregnancies" required><br><br>
+                <input type="text" name="Glucose" placeholder="Glucose" required><br><br>
+                <input type="text" name="BloodPressure" placeholder="Blood Pressure" required><br><br>
+                <input type="text" name="SkinThickness" placeholder="Skin Thickness" required><br><br>
+                <input type="text" name="Insulin" placeholder="Insulin" required><br><br>
+                <input type="text" name="BMI" placeholder="BMI" required><br><br>
+                <input type="text" name="DiabetesPedigreeFunction" placeholder="Diabetes Pedigree Function" required><br><br>
+                <input type="text" name="Age" placeholder="Age" required><br><br>
+                <input type="submit" value="Predict Diabetes">
+            </form><br>
+
+        </div>
+    </center>
+    <div>
+        <center>
+            <h2>{{ prediction_text }}</h2>
+        </center>
+    </div>
+</body>
+</html>
